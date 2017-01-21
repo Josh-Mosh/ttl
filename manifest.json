@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Twenty Thousand Leagues Vue",
+  "description": "",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+
+  "permissions": [
+    "topSites"
+  ],
+
+  "content_security_policy": "script-src 'self' https://unpkg.com/vue/dist/vue.js; object-src 'self'"
+
+  // "background": {
+  //   "scripts": [
+  //       "background.js"
+  //   ],
+  //   "persistent": false
+  // }
+
+  // "content_scripts": [
+  //   {
+  //     "matches": ["<all_urls>"],
+  //     // "css": ["mystyles.css"],
+  //     "js": ["content.js"]
+  //   }
+  // ]
+
+}
