@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 export default {
 
@@ -11,6 +12,14 @@ export default {
 
   mounted: function() {
     this.fetchSites();
+  },
+
+  watch: {
+    topSites: function(sites) {
+      sites.forEach(site => {
+        site.fav = 'https://www.google.com/s2/favicons?domain=' + site.url;
+      });
+    }
   },
 
   methods: {
