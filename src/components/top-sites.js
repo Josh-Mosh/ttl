@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axiosService from '../services/axiosService';
 
 export default {
 
@@ -11,6 +11,12 @@ export default {
   },
 
   mounted: function() {
+    axiosService.get('/days').then(function(res) {
+      console.log('res ', res);
+    }).catch(function(err) {
+      console.log('err ', err);
+    });
+
     this.fetchSites();
   },
 
