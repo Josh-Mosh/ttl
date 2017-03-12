@@ -7,5 +7,6 @@
     <div>
       <top-sites></top-sites>
     </div>
+    <router-view></router-view>
   </div>
 </template>
