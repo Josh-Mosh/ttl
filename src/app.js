@@ -6,12 +6,6 @@ export default {
 
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      todos: [
-        { text: 'Learn JavaScript' },
-        { text: 'Learn Vue' },
-        { text: 'Build something awesome' }
-      ]
     };
   },
 
