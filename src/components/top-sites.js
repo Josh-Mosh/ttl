@@ -6,7 +6,11 @@ export default {
 
   data () {
     return {
-      topSites: null
+      topSites: null,
+      placeholderTopSites: [
+        {title: "YouTube", url: "https://www.youtube.com/"},
+        {title: "Twitch", url: "https://www.twitch.tv/directory/following"},
+      ]
     };
   },
 
@@ -17,7 +21,7 @@ export default {
       console.log('err ', err);
     });
 
-    this.fetchSites();
+    this.fetchTopSites();
   },
 
   watch: {
@@ -30,17 +34,13 @@ export default {
 
   methods: {
 
-    fetchSites: function() {
+    fetchTopSites: function() {
       if (chrome.topSites) {
         chrome.topSites.get(sites => {
-          console.log('sites ', sites);
           this.topSites = sites;
         });
       } else {
-        this.topSites = [
-          {title: "YouTube", url: "https://www.youtube.com/"},
-          {title: "Twitch", url: "https://www.twitch.tv/directory/following"},
-        ];
+        this.topSites = this.placeholderTopSites;
       }
     }
 

@@ -24,3 +24,7 @@ a {
   border-radius: 50%;
   max-height: 400px;
 }
+
+.bookmarks li {
+  display: inline;
+}
