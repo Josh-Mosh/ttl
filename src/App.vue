@@ -3,9 +3,9 @@
 
 <template>
   <div id="app">
-    <img class="cover-image" src="./assets/images/cover1.jpg">
     <div>
-      <top-sites></top-sites>
+      <router-link to="/home">Home</router-link>
+      <router-link to="/admin">Admin</router-link>
     </div>
     <router-view></router-view>
   </div>
