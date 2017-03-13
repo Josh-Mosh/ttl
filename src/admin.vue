@@ -5,7 +5,10 @@
 
     data () {
       return {
-        msg: "Admin View"
+        msg: "Admin View",
+        newDay: {
+          chapter: ''
+        },
       };
     }
 
@@ -14,6 +17,7 @@
 
 <template>
   <div id="admin">
-    <h1>{{ msg }}</h1>
+    <p>Chapter: {{ newDay.chapter }}</p>
+    <input v-model="newDay.chapter" placeholder="Chapter">
   </div>
 </template>

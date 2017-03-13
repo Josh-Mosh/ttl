@@ -7,8 +7,8 @@ import Home from './home.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/admin', component: Admin },
-  { path: '/home', component: Home }
+  { path: '/', components: { default: Home } },
+  { path: '/admin', component: Admin }
 ];
 
 const router = new VueRouter({
