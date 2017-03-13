@@ -14,7 +14,8 @@
   },
 
   "permissions": [
-    "topSites"
+    "topSites",
+    "bookmarks"
   ],
 
   "content_security_policy": "script-src 'self' https://unpkg.com/vue/dist/vue.js; object-src 'self'"
