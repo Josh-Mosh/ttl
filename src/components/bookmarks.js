@@ -36,11 +36,11 @@ export default {
 
     // Assumes iterating through array of objects with url property
     getFavicons: function(items) {
-      console.log('bookmarks ', items);
       items.forEach(item => {
         if (!item.url) {
           return;
         }
+        console.log('bookmark ', item);
         item.fav = 'https://www.google.com/s2/favicons?domain=' + item.url;
       });
     }
