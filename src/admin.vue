@@ -1,4 +1,6 @@
 <script type="text/javascript">
+  import chapters from './fixtures/chapters';
+
   export default {
 
     name: 'admin',
@@ -9,6 +11,7 @@
         newDay: {
           chapter: ''
         },
+        chapterOptions: chapters
       };
     }
 
@@ -17,7 +20,11 @@
 
 <template>
   <div id="admin">
-    <p>Chapter: {{ newDay.chapter }}</p>
-    <input v-model="newDay.chapter" placeholder="Chapter">
+    <select v-model="newDay.chapter">
+      <option v-for="(option, index) in chapterOptions" v-bind:value="option">
+        {{ index + 1 }}: {{ option }}
+      </option>
+    </select>
+    <span>Chapter: {{ newDay.chapter }}</span>
   </div>
 </template>
