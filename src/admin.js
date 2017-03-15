@@ -1,23 +1,28 @@
-  import chapters from './fixtures/chapters';
-  import Day from './models/day';
+import axiosService from './services/axiosService';
+import chapters from './fixtures/chapters';
+import Day from './models/day';
 
-  export default {
+export default {
 
-    name: 'admin',
+  name: 'admin',
 
-    data () {
-      return {
-        newDay: Day,
-        chapterOptions: chapters
-      };
-    },
+  data () {
+    return {
+      newDay: Day,
+      chapterOptions: chapters
+    };
+  },
 
-    methods: {
+  methods: {
 
-      createDay: function() {
-        console.log('newDay ', this.newDay);
-      }
-
+    createDay: function() {
+      axiosService.post('/days', { day: this.newDay }).then(function(response) {
+        console.log('response ', response);
+      }).catch(function(err) {
+        console.log('err ', err);
+      });
     }
 
-  };
+  }
+
+};
