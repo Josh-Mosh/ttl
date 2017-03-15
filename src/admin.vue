@@ -1,22 +1,4 @@
-<script type="text/javascript">
-  import chapters from './fixtures/chapters';
-
-  export default {
-
-    name: 'admin',
-
-    data () {
-      return {
-        msg: "Admin View",
-        newDay: {
-          chapter: 1
-        },
-        chapterOptions: chapters
-      };
-    }
-
-  };
-</script>
+<script type="text/javascript" src="./admin.js"></script>
 
 <template>
   <div id="admin">
@@ -53,6 +35,10 @@
     <div>
       <label for="location">Location: </label>
       <input id="location" v-model="newDay.location" type="text">
+    </div>
+
+    <div>
+      <button v-on:click="createDay">Create Day</button>
     </div>
 
   </div>
