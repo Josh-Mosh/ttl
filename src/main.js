@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueMaterial from 'vue-material';
 import App from './app.vue';
 import Admin from './admin.vue';
 import Home from './home.vue';
 
 Vue.use(VueRouter);
+Vue.use(VueMaterial);
 
 const routes = [
   { path: '/', components: { default: Home } },
