@@ -41,25 +41,29 @@
       <button v-on:click="createDay">Create Day</button>
     </div>
 
-    <table>
-      <thead>
-        <th>Chapter</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Leagues</th>
-        <th>Location</th>
-        <th>Excerpt</th>
-      </thead>
-      <tbody>
-        <tr v-for="day in days">
-          <td>{{ day.chapter }}</td>
-          <td>{{ day.lat }}</td>
-          <td>{{ day.long }}</td>
-          <td>{{ day.leagues }}</td>
-          <td>{{ day.location }}</td>
-          <td>{{ day.excerpt }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <md-table>
+      <md-table-header>
+        <md-table-row>
+          <md-table-head>Chapter</md-table-head>
+          <md-table-head>Latitude</md-table-head>
+          <md-table-head>Longitude</md-table-head>
+          <md-table-head>Leagues</md-table-head>
+          <md-table-head>Location</md-table-head>
+          <md-table-head>Excerpt</md-table-head>
+          <md-table-head>Updated</md-table-head>
+        </md-table-row>
+      </md-table-header>
+      <md-table-body>
+        <md-table-row v-for="day in days">
+          <md-table-cell>{{ day.chapter }}</md-table-cell>
+          <md-table-cell>{{ day.lat }}</md-table-cell>
+          <md-table-cell>{{ day.long }}</md-table-cell>
+          <md-table-cell>{{ day.leagues }}</md-table-cell>
+          <md-table-cell>{{ day.location }}</md-table-cell>
+          <md-table-cell>{{ day.excerpt }}</md-table-cell>
+          <md-table-cell>{{ day.updated }}</md-table-cell>
+        </md-table-row>
+      </md-table-body>
+    </md-table>
   </div>
 </template>
