@@ -41,5 +41,17 @@
       <button v-on:click="createDay">Create Day</button>
     </div>
 
+    <table>
+      <thead>
+        <th>Latitude</th>
+        <th>Longitude</th>
+      </thead>
+      <tbody>
+        <tr v-for="day in days">
+          <td>{{day.lat}}</td>
+          <td>{{day.long}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
