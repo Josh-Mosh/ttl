@@ -2,44 +2,43 @@
 
 <template>
   <div id="admin">
+    <form novalidate @submit.stop.prevent="createDay">
+      <md-input-container>
+        <label for="chapter">Chapter: </label>
+        <md-select id="chapter" v-model="newDay.chapter">
+          <md-option v-for="(option, index) in chapterOptions" v-bind:value="index + 1">
+            {{ index + 1 }}: {{ option }}
+          </md-option>
+        </md-select>
+      </md-input-container>
 
-    <div>
-      <label for="chapter">Chapter: </label>
-      <select id="chapter" v-model="newDay.chapter">
-        <option v-for="(option, index) in chapterOptions" v-bind:value="index + 1">
-          {{ index + 1 }}: {{ option }}
-        </option>
-      </select>
-    </div>
+      <md-input-container>
+        <label for="lat">Latitude: </label>
+        <md-input id="lat" v-model.number="newDay.lat" type="number"></md-input>
+      </md-input-container>
 
-    <div>
-      <label for="lat">Latitude: </label>
-      <input id="lat" v-model.number="newDay.lat" type="number">
-    </div>
+      <md-input-container>
+        <label for="long">Longitude: </label>
+        <md-input id="long" v-model.number="newDay.long" type="number"></md-input>
+      </md-input-container>
 
-    <div>
-      <label for="long">Longitude: </label>
-      <input id="long" v-model.number="newDay.long" type="number">
-    </div>
+      <md-input-container>
+        <label for="leagues">Leagues: </label>
+        <md-input id="leagues" v-model.number="newDay.leagues" type="number"></md-input>
+      </md-input-container>
 
-    <div>
-      <label for="leagues">Leagues: </label>
-      <input id="leagues" v-model.number="newDay.leagues" type="number">
-    </div>
+      <md-input-container>
+        <label for="excerpt">Excerpt: </label>
+        <md-textarea id="excerpt" v-model="newDay.excerpt"></md-textarea>
+      </md-input-container>
 
-    <div>
-      <label for="excerpt">Excerpt: </label>
-      <textarea id="excerpt" v-model="newDay.excerpt"></textarea>
-    </div>
+      <md-input-container>
+        <label for="location">Location: </label>
+        <md-input id="location" v-model="newDay.location" type="text"></md-input>
+      </md-input-container>
 
-    <div>
-      <label for="location">Location: </label>
-      <input id="location" v-model="newDay.location" type="text">
-    </div>
-
-    <div>
-      <button v-on:click="createDay">Create Day</button>
-    </div>
+      <md-button type="submit" class="md-raised md-primary">Create Day</md-button>
+    </form>
 
     <md-table>
       <md-table-header>
