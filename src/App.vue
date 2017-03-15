@@ -10,6 +10,6 @@
       <router-link to="/">Home</router-link>
       <router-link to="/admin">Admin</router-link>
     </div>
-    <router-view></router-view>
+    <router-view :days="days"></router-view>
   </div>
 </template>

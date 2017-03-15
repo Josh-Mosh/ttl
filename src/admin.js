@@ -6,6 +6,8 @@ export default {
 
   name: 'admin',
 
+  props: ['days'],
+
   data () {
     return {
       newDay: Day,
