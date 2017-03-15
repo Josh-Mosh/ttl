@@ -43,13 +43,21 @@
 
     <table>
       <thead>
+        <th>Chapter</th>
         <th>Latitude</th>
         <th>Longitude</th>
+        <th>Leagues</th>
+        <th>Location</th>
+        <th>Excerpt</th>
       </thead>
       <tbody>
         <tr v-for="day in days">
-          <td>{{day.lat}}</td>
-          <td>{{day.long}}</td>
+          <td>{{ day.chapter }}</td>
+          <td>{{ day.lat }}</td>
+          <td>{{ day.long }}</td>
+          <td>{{ day.leagues }}</td>
+          <td>{{ day.location }}</td>
+          <td>{{ day.excerpt }}</td>
         </tr>
       </tbody>
     </table>

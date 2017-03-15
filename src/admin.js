@@ -18,9 +18,10 @@ export default {
   methods: {
 
     createDay: function() {
-      axiosService.post('/days', { day: this.newDay }).then(function(response) {
+      axiosService.post('/days', { day: this.newDay }).then(response => {
         console.log('response ', response);
-      }).catch(function(err) {
+        this.days.push(response.data.day);
+      }).catch(err => {
         console.log('err ', err);
       });
     }
