@@ -1,5 +1,5 @@
 <script type="text/javascript" src="./app.js"></script>
-<style src="./app.css"></style>
+<style src="./app.scss" lang="scss"></style>
 
 <template>
   <div>

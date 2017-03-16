@@ -1,8 +1,8 @@
 <script type="text/javascript" src="./admin.js"></script>
 
 <template>
-  <div id="admin">
-    <form novalidate @submit.stop.prevent="createDay">
+  <div>
+    <md-layout tag="form" novalidate @submit.stop.prevent="createDay">
       <md-input-container>
         <label for="chapter">Chapter: </label>
         <md-select id="chapter" v-model="newDay.chapter">
@@ -38,31 +38,33 @@
       </md-input-container>
 
       <md-button type="submit" class="md-raised md-primary">Create Day</md-button>
-    </form>
+    </md-layout>
 
-    <md-table>
-      <md-table-header>
-        <md-table-row>
-          <md-table-head>Chapter</md-table-head>
-          <md-table-head>Latitude</md-table-head>
-          <md-table-head>Longitude</md-table-head>
-          <md-table-head>Leagues</md-table-head>
-          <md-table-head>Location</md-table-head>
-          <md-table-head>Excerpt</md-table-head>
-          <md-table-head>Updated</md-table-head>
-        </md-table-row>
-      </md-table-header>
-      <md-table-body>
-        <md-table-row v-for="day in days">
-          <md-table-cell>{{ day.chapter }}</md-table-cell>
-          <md-table-cell>{{ day.lat }}</md-table-cell>
-          <md-table-cell>{{ day.long }}</md-table-cell>
-          <md-table-cell>{{ day.leagues }}</md-table-cell>
-          <md-table-cell>{{ day.location }}</md-table-cell>
-          <md-table-cell>{{ day.excerpt }}</md-table-cell>
-          <md-table-cell>{{ day.updated }}</md-table-cell>
-        </md-table-row>
-      </md-table-body>
-    </md-table>
+    <md-layout md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
+      <md-table>
+        <md-table-header>
+          <md-table-row>
+            <md-table-head>Chapter</md-table-head>
+            <md-table-head>Latitude</md-table-head>
+            <md-table-head>Longitude</md-table-head>
+            <md-table-head>Leagues</md-table-head>
+            <md-table-head>Location</md-table-head>
+            <md-table-head width="50%">Excerpt</md-table-head>
+            <md-table-head>Updated</md-table-head>
+          </md-table-row>
+        </md-table-header>
+        <md-table-body>
+          <md-table-row v-for="day in days">
+            <md-table-cell>{{ day.chapter }}</md-table-cell>
+            <md-table-cell>{{ day.lat }}</md-table-cell>
+            <md-table-cell>{{ day.long }}</md-table-cell>
+            <md-table-cell>{{ day.leagues }}</md-table-cell>
+            <md-table-cell>{{ day.location }}</md-table-cell>
+            <md-table-cell>{{ day.excerpt }}</md-table-cell>
+            <md-table-cell>{{ day.updated }}</md-table-cell>
+          </md-table-row>
+        </md-table-body>
+      </md-table>
+    </md-layout>
   </div>
 </template>

@@ -1,3 +1,6 @@
+// Import global material styles first so we can override as needed
+@import url('../vendor/vue-material-master/dist/vue-material.css');
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -54,4 +57,13 @@ a {
 
 .bookmarks li {
   display: inline;
+}
+
+// Layout
+.md-layout {
+  padding: 16px;
+
+  > div {
+    width: 100%;
+  }
 }
