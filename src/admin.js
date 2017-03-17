@@ -1,5 +1,5 @@
 import axiosService from './services/axiosService';
-import chapters from './fixtures/chapters';
+import { partOne, partTwo } from './fixtures/chapters';
 import Day from './models/day';
 
 export default {
@@ -11,7 +11,9 @@ export default {
   data () {
     return {
       newDay: Day,
-      chapterOptions: chapters
+      creatingDay: false,
+      partOneChapters: partOne,
+      partTwoChapters: partTwo
     };
   },
 

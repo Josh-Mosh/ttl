@@ -1,5 +1,4 @@
-export default [
-  // Part 1
+var partOne = [
   "A Runaway Reef",
   "The Pros and Cons",
   "As Master Wishes",
@@ -23,8 +22,10 @@ export default [
   "Some Days Ashore",
   "The Lightning Bolts of Captain Nemo",
   "Aegri Somnia",
-  "The Coral Realm",
-  // Part 2
+  "The Coral Realm"
+];
+
+var partTwo = [
   "The Indian Ocean",
   "A New Proposition from Captain Nemo",
   "A Pearl worth Ten Million",
@@ -49,3 +50,5 @@ export default [
   "The Last Words of Captain Nemo",
   "Conclusion"
 ];
+
+module.exports = { partOne, partTwo };

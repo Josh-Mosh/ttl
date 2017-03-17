@@ -37,6 +37,12 @@ body {
   color: #2c3e50;
 }
 
+.inner-wrapper {
+  padding: 24px;
+  height: 100%;
+  width: 100%;
+}
+
 h1, h2 {
   font-weight: normal;
 }
@@ -61,9 +67,41 @@ a {
 
 // Layout
 .md-layout {
-  padding: 16px;
 
   > div {
+    // padding: 8px 16px 0;
     width: 100%;
   }
+
+}
+
+.md-input-container {
+  margin-bottom: 12px;
+}
+
+.md-gutter-16:not(.md-column) {
+  margin-right: 0px;
+  margin-left: -8px;
+}
+
+.md-gutter-8:not(.md-column) {
+  margin-right: 0px;
+  margin-left: -4px;
+}
+
+.gutter-8 {
+  > * {
+    padding: 8px;
+  }
+  *:first-child {
+    padding-left: 16px;
+  }
+  *:last-child {
+    padding-right: 16px;
+  }
+}
+
+// Spacing
+.text-center {
+  text-align: center;
 }
