@@ -4,9 +4,11 @@ import VueMaterial from 'vue-material';
 import App from './app.vue';
 import Admin from './admin.vue';
 import Home from './home.vue';
+import VueMoment from 'vue-moment';
 
 Vue.use(VueRouter);
 Vue.use(VueMaterial);
+Vue.use(VueMoment);
 
 const routes = [
   { path: '/', components: { default: Home } },

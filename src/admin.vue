@@ -88,7 +88,7 @@
             <md-table-cell>{{ day.leagues }}</md-table-cell>
             <md-table-cell>{{ day.location }}</md-table-cell>
             <md-table-cell>{{ day.excerpt }}</md-table-cell>
-            <md-table-cell>{{ day.updated }}</md-table-cell>
+            <md-table-cell>{{ day.updated | moment("dddd, MMMM Do YYYY") }}</md-table-cell>
           </md-table-row>
         </md-table-body>
       </md-table>
