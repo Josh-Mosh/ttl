@@ -1,6 +1,7 @@
 import axiosService from './services/axiosService';
 import { partOne, partTwo } from './fixtures/chapters';
 import Day from './models/day';
+import dateInput from './components/date-input.vue';
 
 export default {
 
@@ -16,6 +17,8 @@ export default {
       partTwoChapters: partTwo
     };
   },
+
+  components: { dateInput },
 
   methods: {
 
