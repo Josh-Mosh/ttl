@@ -10,6 +10,15 @@ Vue.use(VueRouter);
 Vue.use(VueMaterial);
 Vue.use(VueMoment);
 
+Vue.material.registerTheme('default', {
+  primary: 'light-blue',
+  accent: {
+    color: 'light-blue',
+    hue: 800
+  },
+  background: 'white'
+});
+
 const routes = [
   { path: '/', components: { default: Home } },
   { path: '/admin', component: Admin }

@@ -10,6 +10,9 @@
        url(assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+$bluegrey: #607D8B;
+$lightlightblue: #81D4FA;
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -33,12 +36,11 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
 .inner-wrapper {
-  padding: 24px;
+  padding: 0 24px;
   height: 100%;
   width: 100%;
 }
@@ -61,10 +63,26 @@ a {
   max-height: 400px;
 }
 
-.bookmarks li {
-  display: inline;
+.toolbar.bookmarks {
+  background: $bluegrey;
+  margin: 0;
+  padding: 4px;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: white;
+      padding: 2px 6px;
+      margin: 6px 0;
+    }
+  }
 }
 
+// Favicon vertical alignment correction
+.top-favicon {
+  margin-top: -3px;
+}
 // Layout
 // .md-layout {
 

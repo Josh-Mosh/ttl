@@ -6,12 +6,6 @@
 
     name: 'home',
 
-    data () {
-      return {
-        msg: "Home View"
-      };
-    },
-
     components: { topSites, bookmarks }
 
   };
@@ -19,8 +13,11 @@
 
 <template>
   <div id="home">
-    <h1>{{ msg }}</h1>
     <bookmarks></bookmarks>
+    <div>
+      <router-link to="/">Home</router-link>
+      <router-link to="/admin">Admin</router-link>
+    </div>
     <img class="cover-image" src="./assets/images/cover1.jpg">
     <top-sites></top-sites>
   </div>
