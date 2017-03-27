@@ -1,14 +1,32 @@
 <script type="text/javascript" src="./top-sites.js"></script>
 
+<style lang="scss">
+  .top-link {
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+    white-space: nowrap;
+
+    img {
+      display: inline-block;
+    }
+
+    .title {
+      -webkit-mask-image: linear-gradient(to right, #000, #000, 157px, transparent);
+      display: inline-block;
+      left: 33px;
+      overflow: hidden;
+      position: absolute;
+      width: 164px;
+    }
+  }
+</style>
+
 <template>
-  <div>
-    <ul>
-      <li v-for="site in topSites">
-        <a v-bind:href="site.url">
-          <img class="top-favicon" v-bind:src="site.fav">
-          {{ site.url }}
-        </a>
-      </li>
-    </ul>
-  </div>
+  <md-layout md-column md-flex-large="20">
+    <a v-for="site in topSites" class="top-link custom-whiteframe" v-bind:href="site.url">
+      <img class="top-favicon" v-bind:src="site.fav">
+      <div class="title">{{ site.title }}</div>
+    </a>
+  </md-layout>
 </template>

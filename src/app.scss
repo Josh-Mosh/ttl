@@ -37,10 +37,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  background: url(assets/images/1778map.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.outer-wrapper {
+  display: flex;
 }
 
 .inner-wrapper {
-  padding: 0 24px;
+  padding-bottom: 56px;
   height: 100%;
   width: 100%;
 }
@@ -110,6 +124,20 @@ a {
   > * {
     padding: 0 4px;
   }
+}
+
+// md Overrides
+.md-bottom-bar {
+  position: absolute;
+  bottom: 0;
+}
+
+.custom-whiteframe {
+  box-shadow: 0 1px 3px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  background: white;
+  margin: 12px;
+  padding: 6px 12px;
+  width: inherit;
 }
 
 // Spacing

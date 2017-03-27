@@ -1,4 +1,5 @@
 import axiosService from '../services/axiosService';
+import sitesStub from '../fixtures/sitesStub';
 
 export default {
 
@@ -7,10 +8,7 @@ export default {
   data () {
     return {
       topSites: null,
-      placeholderTopSites: [
-        {title: "YouTube", url: "https://www.youtube.com/"},
-        {title: "Twitch", url: "https://www.twitch.tv/directory/following"},
-      ]
+      placeholderTopSites: sitesStub
     };
   },
 
@@ -31,7 +29,10 @@ export default {
     fetchTopSites: function() {
       if (chrome.topSites) {
         chrome.topSites.get(sites => {
-          this.topSites = sites;
+          if (!sites) {
+            return;
+          }
+          this.topSites = sites.splice(0, 8);
         });
       } else {
         this.topSites = this.placeholderTopSites;
