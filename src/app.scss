@@ -41,12 +41,13 @@ body {
 }
 
 .container {
-  display: flex;
   background: url(assets/images/1778map.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
+  background-size: cover;
+  display: flex;
+  width: 100%;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: cover;
 }
 
 .outer-wrapper {
