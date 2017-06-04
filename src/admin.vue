@@ -46,7 +46,7 @@
               <md-layout md-flex-xsmall="34" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
                 <md-input-container>
                   <label for="year">Year: </label>
-                  <date-input id="year" length="4" v-model="newDay.date.year"></date-input>
+                  <date-input id="year" length="4" v-model="newDay.year"></date-input>
                 </md-input-container>
               </md-layout>
             </md-layout>
@@ -120,7 +120,7 @@
           <md-table-body>
             <md-table-row v-for="(day, index) in days">
               <md-table-cell>{{ day.chapter }}</md-table-cell>
-              <md-table-cell>{{ day.date }}</md-table-cell>
+              <md-table-cell>{{ day.date }}/{{ day.year }}</md-table-cell>
               <md-table-cell>{{ day.lat }}</md-table-cell>
               <md-table-cell>{{ day.long }}</md-table-cell>
               <md-table-cell>{{ day.leagues }}</md-table-cell>
