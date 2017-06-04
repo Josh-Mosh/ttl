@@ -108,6 +108,7 @@
           <md-table-header>
             <md-table-row>
               <md-table-head>Chapter</md-table-head>
+              <md-table-head>Date</md-table-head>
               <md-table-head>Latitude</md-table-head>
               <md-table-head>Longitude</md-table-head>
               <md-table-head>Leagues</md-table-head>
@@ -119,6 +120,7 @@
           <md-table-body>
             <md-table-row v-for="(day, index) in days">
               <md-table-cell>{{ day.chapter }}</md-table-cell>
+              <md-table-cell>{{ day.date }}</md-table-cell>
               <md-table-cell>{{ day.lat }}</md-table-cell>
               <md-table-cell>{{ day.long }}</md-table-cell>
               <md-table-cell>{{ day.leagues }}</md-table-cell>
@@ -126,7 +128,7 @@
               <md-table-cell>{{ day.excerpt }}</md-table-cell>
               <md-table-cell>{{ day.updated | moment("dddd, MM / Do / YYYY") }}</md-table-cell>
               <md-table-cell>
-                <md-button v-on:click.native="removeDay(day._id)" class="md-icon-button md-mini">
+                <md-button v-on:click.native="removeDay(day._id, index)" class="md-icon-button md-mini">
                   <md-icon>clear</md-icon>
                 </md-button>
               </md-table-cell>
