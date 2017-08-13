@@ -91,7 +91,7 @@
 
             <div class="text-center">
               <md-button type="submit" class="md-raised md-primary">Create Day</md-button>
-              <md-button v-on:click.native="creatingDay = false" class="md-raised md-secondary">Cancel</md-button>
+              <md-button v-on:click.native="creatingDay=false" class="md-raised md-secondary">Cancel</md-button>
             </div>
           </md-layout>
         </form>
@@ -99,7 +99,7 @@
     </md-layout>
 
     <md-layout v-else>
-      <md-button v-on:click.native="creatingDay = true" class="md-raised md-primary">Create Day</md-button>
+      <md-button v-on:click.native="creatingDay=true" class="md-raised md-primary">Create Day</md-button>
     </md-layout>
 
     <md-layout md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
@@ -118,21 +118,7 @@
             </md-table-row>
           </md-table-header>
           <md-table-body>
-            <md-table-row v-for="(day, index) in days">
-              <md-table-cell>{{ day.chapter }}</md-table-cell>
-              <md-table-cell>{{ day.date }}/{{ day.year }}</md-table-cell>
-              <md-table-cell>{{ day.lat }}</md-table-cell>
-              <md-table-cell>{{ day.long }}</md-table-cell>
-              <md-table-cell>{{ day.leagues }}</md-table-cell>
-              <md-table-cell>{{ day.location }}</md-table-cell>
-              <md-table-cell>{{ day.excerpt }}</md-table-cell>
-              <md-table-cell>{{ day.updated | moment("dddd, MM / Do / YYYY") }}</md-table-cell>
-              <md-table-cell>
-                <md-button v-on:click.native="removeDay(day._id, index)" class="md-icon-button md-mini">
-                  <md-icon>clear</md-icon>
-                </md-button>
-              </md-table-cell>
-            </md-table-row>
+            <editable-row v-for="(day, index) in days" :day="day" :index="index"></editable-row>
           </md-table-body>
         </md-table>
       </div>
