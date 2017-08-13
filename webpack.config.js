@@ -8,6 +8,14 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env': {
+  //       // 'process.env.NODE_ENV': process.env.NODE_ENV,
+  //       'process.env.API_URL': process.env.API_URL || 'localhost:3000'
+  //     }
+  //   })
+  // ],
   module: {
     rules: [
       {

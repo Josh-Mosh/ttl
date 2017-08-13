@@ -17,9 +17,9 @@ export default {
   methods: {
     fetchDays() {
       axiosService.get('/days').then(response => {
-        console.log('days ', response);
+        console.log('/days res', response);
         this.days = response.data.days;
-      }).catch(function(err) {
+      }).catch(err => {
         console.log('err ', err);
       });
     }

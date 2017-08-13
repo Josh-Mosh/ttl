@@ -16,9 +16,9 @@
     methods: {
       getToday() {
         axiosService.get('/today').then(response => {
-          console.log('res ', response);
+          console.log('/today res ', response);
           // this.days = response.data.days;
-        }).catch(function(err) {
+        }).catch(err => {
           console.log('err ', err);
         });
       }
@@ -41,11 +41,6 @@
           <!-- <img class="cover-image" src="./assets/images/cover1.jpg"> -->
         </md-layout>
       </md-layout>
-      <md-bottom-bar>
-        <md-bottom-bar-item md-icon="history">Recents</md-bottom-bar-item>
-        <md-bottom-bar-item md-icon="favorite" md-active>Favorites</md-bottom-bar-item>
-        <md-bottom-bar-item md-icon="near_me">Nearby</md-bottom-bar-item>
-      </md-bottom-bar>
     </div>
   </div>
 </template>
