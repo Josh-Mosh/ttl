@@ -14,8 +14,10 @@ export default {
     return {
       newDay: Day,
       creatingDay: false,
-      partOneChapters: partOne,
-      partTwoChapters: partTwo
+      chapters: {
+        partOne: partOne,
+        partTwo: partTwo
+      }
     };
   },
 
@@ -30,6 +32,10 @@ export default {
       }).catch(err => {
         console.log('createDay err ', err);
       });
+    },
+
+    updateDay: function(day) {
+      console.log('day from admin ', day);
     },
 
     removeDay: function(dayId, index) {

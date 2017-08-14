@@ -17,11 +17,11 @@
                 <label for="chapter">Chapter: </label>
                 <md-select id="chapter" v-model="newDay.chapter">
                   <md-subheader>Part 1</md-subheader>
-                  <md-option v-for="(option, index) in partOneChapters" v-bind:value="index + 1">
+                  <md-option v-for="(option, index) in chapters.partOne" v-bind:value="index + 1">
                     {{ index + 1 }}. {{ option }}
                   </md-option>
                   <md-subheader>Part 2</md-subheader>
-                  <md-option v-for="(option, index) in partTwoChapters" v-bind:value="index + 25">
+                  <md-option v-for="(option, index) in chapters.partTwo" v-bind:value="index + 25">
                     {{ index + 25 }}. {{ option }}
                   </md-option>
                 </md-select>
@@ -118,7 +118,13 @@
             </md-table-row>
           </md-table-header>
           <md-table-body>
-            <editable-row v-for="(day, index) in days" :day="day" :index="index"></editable-row>
+            <editable-row v-for="(day, index) in days"
+              :day="day"
+              :index="index"
+              :chapters="chapters"
+              v-on:update="updateDay"
+            >
+            </editable-row>
           </md-table-body>
         </md-table>
       </div>
