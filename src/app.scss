@@ -141,6 +141,23 @@ a {
   width: inherit;
 }
 
+.md-table  {
+  .md-table-head-text {
+    padding-left: 12px;
+    padding-right: 16px;
+  }
+
+  .md-table-cell .md-table-cell-container {
+    padding: 6px 16px 6px 12px;
+  }
+
+  .md-input-container.md-has-value {
+    input, textarea {
+      font-size: 13px;
+    }
+  }
+}
+
 // Spacing
 .text-center {
   text-align: center;

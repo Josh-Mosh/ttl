@@ -35,7 +35,11 @@ export default {
     },
 
     updateDay: function(day) {
-      console.log('day from admin ', day);
+      axiosService.put('/days/' + day._id, { day: day }).then(response => {
+        console.log('response ', response);
+      }).catch(err => {
+        console.log('updateDay err ', err);
+      });
     },
 
     removeDay: function(dayId, index) {
