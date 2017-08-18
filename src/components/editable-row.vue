@@ -24,8 +24,8 @@
         this.$emit('update', day);
       },
 
-      remove: function() {
-        this.$emit('removeDay');
+      remove: function(id, index) {
+        this.$emit('remove', id, index);
       }
     }
   };
@@ -42,7 +42,7 @@
         {{ day.chapter }}
       </span>
       <md-input-container v-else>
-        <!-- <label for="chapter">Chapter: </label> -->
+        <label for="chapter">Chapter: </label>
         <md-select id="chapter" v-model="day.chapter">
           <md-subheader>Part 1</md-subheader>
           <md-option v-for="(option, index) in chapters.partOne" v-bind:value="index + 1">
@@ -55,52 +55,64 @@
         </md-select>
       </md-input-container>
     </md-table-cell>
-    <md-table-cell>
-      <md-input-container v-if="editing">
-        <!-- <label for="month">Year: </label> -->
-        <date-input id="year" length="2" v-model.number="day.year"></date-input>
+
+    <md-table-cell class="nopadding" v-if="editing">
+      <md-input-container class="inline">
+        <label for="month">Mo: </label>
+        <date-input id="month" length="2" v-model.number="day.month"></date-input>
       </md-input-container>
-      <span v-else>
-        {{ day.date }}/{{ day.year }}
-      </span>
+<!--     </md-table-cell>
+    <md-table-cell class="nopadding" v-if="editing"> -->
+      <md-input-container class="inline">
+        <label for="day">Dy: </label>
+        <date-input id="day" length="2" v-model.number="day.day"></date-input>
+      </md-input-container>
+<!--     </md-table-cell>
+    <md-table-cell class="nopadding" v-if="editing"> -->
+      <md-input-container class="inline">
+        <label for="year">Yr: </label>
+        <date-input id="year" length="4" v-model.number="day.year"></date-input>
+      </md-input-container>
     </md-table-cell>
+
+    <md-table-cell v-else>
+      {{ day.month }}/{{ day.day }}/{{ day.year }}
+    </md-table-cell>
+
     <md-table-cell>
       <md-input-container v-if="editing">
-        <!-- <label for="lat">Latitude: </label> -->
+        <label for="lat">Lat: </label>
         <md-input id="lat" v-model.number="day.lat" type="number"></md-input>
       </md-input-container>
       <span v-else>{{ day.lat }}</span>
     </md-table-cell>
     <md-table-cell>
       <md-input-container v-if="editing">
-        <!-- <label for="long">Longitude: </label> -->
+        <label for="long">Lon: </label>
         <md-input id="long" v-model.number="day.long" type="number"></md-input>
       </md-input-container>
       <span v-else>{{ day.long }}</span>
     </md-table-cell>
     <md-table-cell>
       <md-input-container v-if="editing">
-        <!-- <label for="leagues">Leagues: </label> -->
+        <label for="leagues">Leag: </label>
         <md-input id="leagues" v-model.number="day.leagues" type="number"></md-input>
       </md-input-container>
       <span v-else>{{ day.leagues }}</span>
     </md-table-cell>
     <md-table-cell>
       <md-input-container v-if="editing">
-        <!-- <label for="location">Location: </label> -->
-        <md-input id="location" v-model="day.location" type="text"></md-input>
+        <label for="location">Location: </label>
+        <md-textarea id="location" v-model="day.location"></md-textarea>
       </md-input-container>
       <span v-else>{{ day.location }}</span>
     </md-table-cell>
     <md-table-cell>
       <md-input-container v-if="editing">
-        <!-- <label for="excerpt">Excerpt: </label> -->
+        <label for="excerpt">Excerpt: </label>
         <md-textarea id="excerpt" v-model="day.excerpt"></md-textarea>
       </md-input-container>
       <span v-else>{{ day.excerpt }}</span>
-    </md-table-cell>
-    <md-table-cell>
-      {{ day.updated | moment("dddd, MM / Do / YYYY") }}
     </md-table-cell>
     <md-table-cell>
       <md-button v-if="editing" v-on:click.stop="update(day)" class="md-icon-button md-primary md-mini">

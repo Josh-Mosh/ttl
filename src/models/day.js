@@ -1,5 +1,6 @@
 export default {
-  date: { month: null, day: null},
+  month: null,
+  day: null,
   year: 1866,
   chapter: 1,
   lat: null,

@@ -156,9 +156,22 @@ a {
       font-size: 13px;
     }
   }
+
+  .md-input-container:not(.md-has-value) label{
+    font-size: 13px;
+  }
 }
 
 // Spacing
 .text-center {
   text-align: center;
+}
+
+.nopadding .md-table-cell-container {
+  padding: 0px !important;
+}
+
+.inline {
+  display: inline-block;
+  width: 31%;
 }

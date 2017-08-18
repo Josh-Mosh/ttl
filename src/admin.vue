@@ -32,14 +32,14 @@
               <md-layout md-flex-xsmall="33" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
                 <md-input-container>
                   <label for="month">Month: </label>
-                  <date-input id="month" length="2" v-model.number="newDay.date.month"></date-input>
+                  <date-input id="month" length="2" v-model.number="newDay.month"></date-input>
                 </md-input-container>
               </md-layout>
 
               <md-layout md-flex-xsmall="33" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
                 <md-input-container>
                   <label for="day">Day: </label>
-                  <date-input id="day" length="2" v-model.number="newDay.date.day"></date-input>
+                  <date-input id="day" length="2" v-model.number="newDay.day"></date-input>
                 </md-input-container>
               </md-layout>
 
@@ -108,13 +108,12 @@
           <md-table-header>
             <md-table-row>
               <md-table-head>Chapter</md-table-head>
-              <md-table-head>Date</md-table-head>
+              <md-table-head width="12%">Date</md-table-head>
               <md-table-head>Latitude</md-table-head>
               <md-table-head>Longitude</md-table-head>
               <md-table-head>Leagues</md-table-head>
-              <md-table-head>Location</md-table-head>
-              <md-table-head width="50%">Excerpt</md-table-head>
-              <md-table-head>Updated</md-table-head>
+              <md-table-head width="10%">Location</md-table-head>
+              <md-table-head width="45%">Excerpt</md-table-head>
             </md-table-row>
           </md-table-header>
           <md-table-body>
@@ -123,6 +122,7 @@
               :index="index"
               :chapters="chapters"
               v-on:update="updateDay"
+              v-on:remove="removeDay"
             >
             </editable-row>
           </md-table-body>
