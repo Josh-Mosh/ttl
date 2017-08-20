@@ -25,6 +25,7 @@
       },
 
       remove: function(id, index) {
+        // handle remove request in parent
         this.$emit('remove', id, index);
       }
     }
@@ -61,14 +62,10 @@
         <label for="month">Mo: </label>
         <date-input id="month" length="2" v-model.number="day.month"></date-input>
       </md-input-container>
-<!--     </md-table-cell>
-    <md-table-cell class="nopadding" v-if="editing"> -->
       <md-input-container class="inline">
         <label for="day">Dy: </label>
         <date-input id="day" length="2" v-model.number="day.day"></date-input>
       </md-input-container>
-<!--     </md-table-cell>
-    <md-table-cell class="nopadding" v-if="editing"> -->
       <md-input-container class="inline">
         <label for="year">Yr: </label>
         <date-input id="year" length="4" v-model.number="day.year"></date-input>
