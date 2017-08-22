@@ -37,7 +37,7 @@
 
 <template>
   <md-table-row v-on:click.native="editing=true">
-    <md-table-cell>
+    <md-table-cell class="lessPad">
       <!-- {{ editing }} -->
       <span v-if="!editing">
         {{ day.chapter }}
@@ -76,42 +76,47 @@
       {{ day.month }}/{{ day.day }}/{{ day.year }}
     </md-table-cell>
 
-    <md-table-cell>
+    <md-table-cell class="lessPad">
       <md-input-container v-if="editing">
         <label for="lat">Lat: </label>
         <md-input id="lat" v-model.number="day.lat" type="number"></md-input>
       </md-input-container>
       <span v-else>{{ day.lat }}</span>
     </md-table-cell>
-    <md-table-cell>
+
+    <md-table-cell class="lessPad">
       <md-input-container v-if="editing">
         <label for="long">Lon: </label>
         <md-input id="long" v-model.number="day.long" type="number"></md-input>
       </md-input-container>
       <span v-else>{{ day.long }}</span>
     </md-table-cell>
-    <md-table-cell>
+
+    <md-table-cell class="lessPad">
       <md-input-container v-if="editing">
         <label for="leagues">Leag: </label>
         <md-input id="leagues" v-model.number="day.leagues" type="number"></md-input>
       </md-input-container>
       <span v-else>{{ day.leagues }}</span>
     </md-table-cell>
-    <md-table-cell>
+
+    <md-table-cell class="lessPad">
       <md-input-container v-if="editing">
         <label for="location">Location: </label>
         <md-textarea id="location" v-model="day.location"></md-textarea>
       </md-input-container>
       <span v-else>{{ day.location }}</span>
     </md-table-cell>
-    <md-table-cell>
+
+    <md-table-cell class="lessPad">
       <md-input-container v-if="editing">
         <label for="excerpt">Excerpt: </label>
         <md-textarea id="excerpt" v-model="day.excerpt"></md-textarea>
       </md-input-container>
       <span v-else>{{ day.excerpt }}</span>
     </md-table-cell>
-    <md-table-cell>
+
+    <md-table-cell class="lessPad">
       <md-button v-if="editing" v-on:click.stop="update(day)" class="md-icon-button md-primary md-mini">
         <md-icon>check</md-icon>
       </md-button>

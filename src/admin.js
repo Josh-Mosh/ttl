@@ -29,6 +29,7 @@ export default {
       axiosService.post('/days', { day: this.newDay }).then(response => {
         console.log('response ', response);
         this.days.push(response.data.day);
+        this.newDay.reset();
       }).catch(err => {
         console.log('createDay err ', err);
       });
