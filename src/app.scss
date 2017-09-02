@@ -147,8 +147,12 @@ a {
     padding-right: 16px;
   }
 
-  .md-table-cell .md-table-cell-container {
-    padding: 6px 16px 6px 12px;
+  .md-table-cell {
+    white-space: pre-wrap;
+
+    .md-table-cell-container {
+      padding: 6px 16px 6px 12px;
+    }
   }
 
   .md-input-container.md-has-value {
@@ -177,5 +181,8 @@ a {
 
 .inline {
   display: inline-block;
+  height: 48px;
+  margin-top: 12px;
+  padding-top: 0;
   width: 31%;
 }
