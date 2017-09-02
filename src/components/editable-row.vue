@@ -1,48 +1,12 @@
-<script type="text/javascript">
-  import dateInput from './date-input.vue';
-
-  export default {
-    name: 'editable-row',
-    props: ['day', 'index', 'chapters'],
-
-    data: function() {
-      return {
-        editing: false
-      }
-    },
-
-    components: { dateInput },
-
-    methods: {
-      editRow: function() {
-        console.log('editing row');
-      },
-
-      update: function(day) {
-        this.editing = false;
-        // handle update request in parent
-        this.$emit('update', day);
-      },
-
-      remove: function(id, index) {
-        // handle remove request in parent
-        this.$emit('remove', id, index);
-      }
-    }
-  };
-</script>
-
-<style lang="scss">
-</style>
+<script type="text/javascript" src="./editable-row.js"></script>
 
 <template>
   <md-table-row v-on:click.native="editing=true">
     <md-table-cell class="lessPad">
-      <!-- {{ editing }} -->
       <span v-if="!editing">
         {{ day.chapter }}
       </span>
-      <md-input-container v-else>
+      <md-input-container v-else style="padding-top: 0px;">
         <label for="chapter">Chapter: </label>
         <md-select id="chapter" v-model="day.chapter">
           <md-subheader>Part 1</md-subheader>
