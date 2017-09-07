@@ -30,6 +30,14 @@ export default {
 
   components: { dateInput, editableRow },
 
+  computed: {
+
+    showDayActions: function() {
+      return !this.creatingDay && !this.selectingDays;
+    }
+
+  },
+
   methods: {
 
     createDay: function() {

@@ -5,7 +5,13 @@
 
     <div v-show="selectingDays" class="whiteframe-container">
       <div class="custom-whiteframe snackbar">
-        Click 2 days to fill in any missing days
+        <h3>Click 2 days to fill in any missing days between:</h3>
+        <p><b>Start: </b> {{ selectedDays.start }}</p>
+        <p><b>End: </b> {{ selectedDays.end }}</p>
+        <div class="actions">
+          <md-button class="md-raised md-primary">Fill Missing Days</md-button>
+          <md-button v-on:click="selectingDays=false">Cancel</md-button>
+        </div>
       </div>
     </div>
 
@@ -105,7 +111,7 @@
       </div>
     </md-layout>
 
-    <md-layout v-else>
+    <md-layout v-if="showDayActions">
       <md-button v-on:click.native="creatingDay=true" class="md-raised md-primary">Create Day</md-button>
       <md-button v-on:click.native="selectingDays=true" class="md-raised md-primary">Fill Missing Days</md-button>
     </md-layout>
