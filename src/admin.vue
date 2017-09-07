@@ -2,6 +2,13 @@
 
 <template>
   <div>
+
+    <div v-show="selectingDays" class="whiteframe-container">
+      <div class="custom-whiteframe snackbar">
+        Click 2 days to fill in any missing days
+      </div>
+    </div>
+
     <md-layout class="gutter-8">
       <router-link to="/">Home</router-link>
       <router-link to="/admin">Admin</router-link>
@@ -100,6 +107,7 @@
 
     <md-layout v-else>
       <md-button v-on:click.native="creatingDay=true" class="md-raised md-primary">Create Day</md-button>
+      <md-button v-on:click.native="selectingDays=true" class="md-raised md-primary">Fill Missing Days</md-button>
     </md-layout>
 
     <md-layout md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
@@ -121,8 +129,10 @@
               :day="day"
               :index="index"
               :chapters="chapters"
+              :selectingDays="selectingDays"
               v-on:update="updateDay"
               v-on:remove="removeDay"
+              v-on:selectDay="selectDay"
             >
             </editable-row>
           </md-table-body>

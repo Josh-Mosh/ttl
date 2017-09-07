@@ -14,6 +14,13 @@ export default {
     return {
       newDay: Day,
       creatingDay: false,
+
+      selectingDays: false,
+      selectedDays: {
+        start: null,
+        end: null
+      },
+
       chapters: {
         partOne: partOne,
         partTwo: partTwo
@@ -50,6 +57,11 @@ export default {
       }).catch(err => {
         console.log('removeDay err ', err);
       });
+    },
+
+    selectDay: function(day, index) {
+      console.log('selectDay in admin controller');
+      console.log(day, index);
     }
 
   }

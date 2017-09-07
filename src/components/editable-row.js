@@ -2,7 +2,7 @@ import dateInput from './date-input.vue';
 
 export default {
   name: 'editable-row',
-  props: ['day', 'index', 'chapters'],
+  props: ['day', 'index', 'chapters', 'selectingDays'],
 
   data: function() {
     return {
@@ -23,6 +23,12 @@ export default {
     remove: function(id, index) {
       // handle remove request in parent
       this.$emit('remove', id, index);
+    },
+
+    selectDay: function(day, index) {
+      console.log(day, index);
+      this.$emit('selectDay', day, index);
     }
+
   }
 };

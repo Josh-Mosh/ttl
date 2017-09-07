@@ -127,6 +127,15 @@ a {
   }
 }
 
+// Snackbar
+.custom-whiteframe.snackbar {
+  width: 33%;
+  left: 33%;
+  position: fixed;
+  z-index: 2;
+  text-align: center;
+}
+
 // md Overrides
 .md-bottom-bar {
   position: absolute;
