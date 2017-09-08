@@ -111,9 +111,9 @@
       </div>
     </md-layout>
 
-    <md-layout v-if="showDayActions">
-      <md-button v-on:click.native="creatingDay=true" class="md-raised md-primary">Create Day</md-button>
-      <md-button v-on:click.native="selectingDays=true" class="md-raised md-primary">Fill Missing Days</md-button>
+    <md-layout v-show="!creatingDay">
+      <md-button v-on:click.native="creatingDay=true" :disabled="selectingDays" class="md-raised md-primary">Create Day</md-button>
+      <md-button v-on:click.native="selectingDays=true" :disabled="selectingDays" class="md-raised md-primary">Fill Missing Days</md-button>
     </md-layout>
 
     <md-layout md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
