@@ -1,7 +1,7 @@
 <script type="text/javascript" src="./editable-row.js"></script>
 
 <template>
-  <md-table-row :class="{ isSelected: day.selected }" v-on:click.native="selectingDays ? selectDay(day, index) : editing=true">
+  <md-table-row v-bind:class="{ isSelected: selected }" v-on:click.native="selectingDays ? selectDay() : editing=true">
     <md-table-cell class="lessPad">
       <span v-if="!editing">
         {{ day.chapter }}

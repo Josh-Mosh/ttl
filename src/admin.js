@@ -70,7 +70,7 @@ export default {
       console.log('selectDay in admin controller');
       console.log(day, index);
 
-      day.selected = true;
+      // day.selected = true;
     }
 
   }

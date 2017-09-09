@@ -6,7 +6,8 @@ export default {
 
   data: function() {
     return {
-      editing: false
+      editing: false,
+      selected: false
     }
   },
 
@@ -25,9 +26,10 @@ export default {
       this.$emit('remove', id, index);
     },
 
-    selectDay: function(day, index) {
-      console.log(day, index);
-      this.$emit('selectDay', day, index);
+    selectDay: function() {
+      console.log('component ', this.day.selected);
+      this.selected = true;
+      this.$emit('selectDay', this.day, this.index);
     }
 
   }
