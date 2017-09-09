@@ -157,6 +157,10 @@ a {
     padding-right: 16px;
   }
 
+  .md-table-row.isSelected {
+    background: #ccf7c7;
+  }
+
   .md-table-cell {
     white-space: pre-wrap;
 

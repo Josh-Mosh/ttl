@@ -3,6 +3,7 @@ import { partOne, partTwo } from './fixtures/chapters';
 import Day from './models/day';
 import dateInput from './components/date-input.vue';
 import editableRow from './components/editable-row.vue';
+import formattedDate from './components/formatted-date.vue';
 
 export default {
 
@@ -28,7 +29,7 @@ export default {
     };
   },
 
-  components: { dateInput, editableRow },
+  components: { dateInput, editableRow, formattedDate },
 
   methods: {
 
@@ -60,8 +61,16 @@ export default {
     },
 
     selectDay: function(day, index) {
+      let start = this.selectedDays.start,
+          end = this.selectedDays.end;
+
+      if (start || end) {
+        days.start = day;
+      }
       console.log('selectDay in admin controller');
       console.log(day, index);
+
+      day.selected = true;
     }
 
   }
