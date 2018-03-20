@@ -23,10 +23,10 @@
 </style>
 
 <template>
-  <md-layout md-column md-flex-large="20">
+  <div class="md-layout" md-column md-flex-large="20">
     <a v-for="site in topSites" class="top-link custom-whiteframe" v-bind:href="site.url">
       <img class="top-favicon" v-bind:src="site.fav">
       <div class="title">{{ site.title }}</div>
     </a>
-  </md-layout>
+  </div>
 </template>

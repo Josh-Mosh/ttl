@@ -15,17 +15,17 @@
       </div>
     </div>
 
-    <md-layout class="gutter-8">
+    <div class="md-layout gutter-8">
       <router-link to="/">Home</router-link>
       <router-link to="/admin">Admin</router-link>
-    </md-layout>
+    </div>
 
-    <md-layout v-if="creatingDay" md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
+    <div class="md-layout" v-if="creatingDay" md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
       <div class="custom-whiteframe" style="width: 100%;">
         <form novalidate @submit.stop.prevent="createDay">
-          <md-layout md-column-xsmall md-row-large class="gutter-8">
+          <div class="md-layout gutter-8" md-column-xsmall md-row-large>
 
-            <md-layout md-row-small md-flex-small="100" md-flex-medium="30" md-flex-large="30">
+            <div class="md-layout" md-row-small md-flex-small="100" md-flex-medium="30" md-flex-large="30">
               <md-input-container>
                 <label for="chapter">Chapter: </label>
                 <md-select id="chapter" v-model="newDay.chapter">
@@ -39,84 +39,84 @@
                   </md-option>
                 </md-select>
               </md-input-container>
-            </md-layout>
+            </div>
 
-            <md-layout md-row-xsmall class="gutter-8">
-              <md-layout md-flex-xsmall="33" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
+            <div class="md-layout gutter-8" md-row-xsmall>
+              <div class="md-layout" md-flex-xsmall="33" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
                 <md-input-container>
                   <label for="month">Month: </label>
                   <date-input id="month" length="2" v-model.number="newDay.month"></date-input>
                 </md-input-container>
-              </md-layout>
+              </div>
 
-              <md-layout md-flex-xsmall="33" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
+              <div class="md-layout" md-flex-xsmall="33" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
                 <md-input-container>
                   <label for="day">Day: </label>
                   <date-input id="day" length="2" v-model.number="newDay.day"></date-input>
                 </md-input-container>
-              </md-layout>
+              </div>
 
-              <md-layout md-flex-xsmall="34" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
+              <div class="md-layout" md-flex-xsmall="34" md-flex-small="30" md-flex-medium="8" md-flex-large="8">
                 <md-input-container>
                   <label for="year">Year: </label>
                   <date-input id="year" length="4" v-model="newDay.year"></date-input>
                 </md-input-container>
-              </md-layout>
-            </md-layout>
+              </div>
+            </div>
 
-            <md-layout md-row-xsmall class="gutter-8">
+            <div class="md-layout gutter-8" md-row-xsmall>
 
-              <md-layout md-flex-xsmall="50" md-flex-small="100" md-flex-medium="50" md-flex-large="50">
+              <div class="md-layout" md-flex-xsmall="50" md-flex-small="100" md-flex-medium="50" md-flex-large="50">
                 <md-input-container>
                   <label for="lat">Latitude: </label>
                   <md-input id="lat" v-model.number="newDay.lat" type="number"></md-input>
                 </md-input-container>
-              </md-layout>
+              </div>
 
-              <md-layout md-flex-xsmall="50" md-flex-small="100" md-flex-medium="50" md-flex-large="50">
+              <div class="md-layout" md-flex-xsmall="50" md-flex-small="100" md-flex-medium="50" md-flex-large="50">
                 <md-input-container>
                   <label for="long">Longitude: </label>
                   <md-input id="long" v-model.number="newDay.long" type="number"></md-input>
                 </md-input-container>
-              </md-layout>
-            </md-layout>
+              </div>
+            </div>
 
-            <md-layout md-flex-small="100" md-flex-medium="20" md-flex-large="20">
+            <div class="md-layout" md-flex-small="100" md-flex-medium="20" md-flex-large="20">
               <md-input-container>
                 <label for="leagues">Leagues: </label>
                 <md-input id="leagues" v-model.number="newDay.leagues" type="number"></md-input>
               </md-input-container>
-            </md-layout>
+            </div>
 
-            <md-layout md-flex-small="100" md-flex-medium="100" md-flex-large="100">
+            <div class="md-layout" md-flex-small="100" md-flex-medium="100" md-flex-large="100">
               <md-input-container md-inline>
                 <label for="location">Location: </label>
                 <md-input id="location" v-model="newDay.location" type="text"></md-input>
               </md-input-container>
-            </md-layout>
+            </div>
 
-            <md-layout md-flex-small="100" md-flex-medium="100" md-flex-large="100">
+            <div class="md-layout" md-flex-small="100" md-flex-medium="100" md-flex-large="100">
               <md-input-container>
                 <label for="excerpt">Excerpt: </label>
                 <md-textarea id="excerpt" v-model="newDay.excerpt"></md-textarea>
               </md-input-container>
-            </md-layout>
+            </div>
 
             <div class="text-center">
               <md-button type="submit" class="md-raised md-primary">Create Day</md-button>
               <md-button v-on:click.native="creatingDay=false" class="md-raised md-secondary">Cancel</md-button>
             </div>
-          </md-layout>
+          </div>
         </form>
       </div>
-    </md-layout>
+    </div>
 
-    <md-layout v-show="!creatingDay">
+    <div class="md-layout" v-show="!creatingDay">
       <md-button v-on:click.native="creatingDay=true" :disabled="selectingDays" class="md-raised md-primary">Create Day</md-button>
       <md-button v-on:click.native="selectingDays=true" :disabled="selectingDays" class="md-raised md-primary">Fill Missing Days</md-button>
-    </md-layout>
+    </div>
 
-    <md-layout md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
+    <div class="md-layout" md-flex-small="100" md-flex-large="100" md-flex-xlarge="100">
       <div class="custom-whiteframe">
         <md-table>
           <md-table-header>
@@ -144,6 +144,6 @@
           </md-table-body>
         </md-table>
       </div>
-    </md-layout>
+    </div>
   </div>
 </template>
