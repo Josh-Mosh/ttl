@@ -27,6 +27,23 @@
   };
 </script>
 
+<style lang="scss">
+  .today-wrapper {
+    position: absolute;
+    top: 50%;
+    width: 100%
+  }
+
+  .today-text {
+    color: #4a4942;
+    font-family: 'Merienda';
+    font-size: 13px;
+    margin: 0 auto;
+    text-align: center;
+    width: 310px;
+  }
+</style>
+
 <template>
   <div id="home" class="outer-wrapper">
     <div class="inner-wrapper">
@@ -37,9 +54,13 @@
       </div>
       <md-layout md-row>
         <top-sites></top-sites>
-        <md-layout md-flex-large="80">
-          <!-- <img class="cover-image" src="./assets/images/cover1.jpg"> -->
-        </md-layout>
+      </md-layout>
+      <md-layout md-row>
+        <div class="today-wrapper">
+          <div class="today-text">
+            "Bah!" he replied. "Nothing's out there, Professor Aronnax, and if there is some animal, what chance would we have of spotting it? Can't you see we're just wandering around at random? People say they've sighted this slippery beast again in the Pacific high seas-- I'm truly willing to believe it, but two months have already gone by since then, and judging by your narwhale's personality, it hates growing moldy from hanging out too long in the same waterways! It's blessed with a terrific gift for getting around. Now, professor, you know even better than I that nature doesn't violate good sense, and she wouldn't give some naturally slow animal the ability to move swiftly if it hadn't a need to use that talent. So if the beast does exist, it's already long gone!"
+          </div>
+        </div>
       </md-layout>
     </div>
   </div>
