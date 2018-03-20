@@ -52,10 +52,10 @@
         <router-link to="/admin">Admin</router-link>
       </div>
 
-      <div class="md-layout" md-row>
+      <div class="md-layout">
         <top-sites></top-sites>
 
-        <div class="md-layout" md-column md-flex-large="60">
+        <div class="md-layout-item md-size-60">
           <date-time></date-time>
 
           <div class="today-wrapper">

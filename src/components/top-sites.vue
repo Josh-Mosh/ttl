@@ -2,6 +2,7 @@
 
 <style lang="scss">
   .top-link {
+    display: block;
     overflow: hidden;
     position: relative;
     width: 200px;
@@ -23,7 +24,7 @@
 </style>
 
 <template>
-  <div class="md-layout" md-column md-flex-large="20">
+  <div class="md-layout-item md-size-20">
     <a v-for="site in topSites" class="top-link custom-whiteframe" v-bind:href="site.url">
       <img class="top-favicon" v-bind:src="site.fav">
       <div class="title">{{ site.title }}</div>

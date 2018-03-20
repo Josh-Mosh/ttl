@@ -8,7 +8,7 @@
 </style>
 
 <template>
-  <div class="md-layout date-time" md-flex="20">
+  <div class="date-time">
     <div class="md-layout">{{ new Date() | moment("dddd, MMMM Do YYYY") }}</div>
     <div class="md-layout">{{time}}</div>
   </div>
