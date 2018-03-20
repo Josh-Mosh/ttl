@@ -6,7 +6,7 @@
       <span v-if="!editing">
         {{ day.chapter }}
       </span>
-      <md-input-container v-else style="padding-top: 0px;">
+      <md-field v-else style="padding-top: 0px;">
         <label for="chapter">Chapter: </label>
         <md-select id="chapter" v-model="day.chapter">
           <md-subheader>Part 1</md-subheader>
@@ -18,22 +18,22 @@
             {{ index + 25 }}. {{ option }}
           </md-option>
         </md-select>
-      </md-input-container>
+      </md-field>
     </md-table-cell>
 
     <md-table-cell class="nopadding" v-if="editing">
-      <md-input-container class="inline">
+      <md-field class="inline">
         <label for="month">Mo: </label>
         <date-input id="month" length="2" v-model.number="day.month"></date-input>
-      </md-input-container>
-      <md-input-container class="inline">
+      </md-field>
+      <md-field class="inline">
         <label for="day">Dy: </label>
         <date-input id="day" length="2" v-model.number="day.day"></date-input>
-      </md-input-container>
-      <md-input-container class="inline">
+      </md-field>
+      <md-field class="inline">
         <label for="year">Yr: </label>
         <date-input id="year" length="4" v-model.number="day.year"></date-input>
-      </md-input-container>
+      </md-field>
     </md-table-cell>
 
     <md-table-cell v-else>
@@ -41,42 +41,42 @@
     </md-table-cell>
 
     <md-table-cell class="lessPad">
-      <md-input-container v-if="editing">
+      <md-field v-if="editing">
         <label for="lat">Lat: </label>
         <md-input id="lat" v-model.number="day.lat" type="number"></md-input>
-      </md-input-container>
+      </md-field>
       <span v-else>{{ day.lat }}</span>
     </md-table-cell>
 
     <md-table-cell class="lessPad">
-      <md-input-container v-if="editing">
+      <md-field v-if="editing">
         <label for="long">Lon: </label>
         <md-input id="long" v-model.number="day.long" type="number"></md-input>
-      </md-input-container>
+      </md-field>
       <span v-else>{{ day.long }}</span>
     </md-table-cell>
 
     <md-table-cell class="lessPad">
-      <md-input-container v-if="editing">
+      <md-field v-if="editing">
         <label for="leagues">Leag: </label>
         <md-input id="leagues" v-model.number="day.leagues" type="number"></md-input>
-      </md-input-container>
+      </md-field>
       <span v-else>{{ day.leagues }}</span>
     </md-table-cell>
 
     <md-table-cell class="lessPad">
-      <md-input-container v-if="editing">
-        <label for="location">Location: </label>
-        <md-textarea id="location" v-model="day.location"></md-textarea>
-      </md-input-container>
+      <md-field v-if="editing">
+        <label>Location: </label>
+        <md-textarea v-model="day.location"></md-textarea>
+      </md-field>
       <span v-else>{{ day.location }}</span>
     </md-table-cell>
 
     <md-table-cell class="lessPad">
-      <md-input-container v-if="editing">
+      <md-field v-if="editing">
         <label for="excerpt">Excerpt: </label>
         <md-textarea id="excerpt" v-model="day.excerpt"></md-textarea>
-      </md-input-container>
+      </md-field>
       <span v-else>{{ day.excerpt }}</span>
     </md-table-cell>
 
