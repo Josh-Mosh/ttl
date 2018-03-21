@@ -1,7 +1,7 @@
 var axios = require('axios');
 
 var axiosInstance = axios.create({
-  baseURL: 'http://localhost:3000/api/'
+  baseURL: process.env.API_URL
   // baseURL: 'https://ttl-api.herokuapp.com/api/'
 });
 

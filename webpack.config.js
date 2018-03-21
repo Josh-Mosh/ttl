@@ -8,14 +8,13 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
-  // plugins: [
-  //   new webpack.DefinePlugin({
-  //     'process.env': {
-  //       // 'process.env.NODE_ENV': process.env.NODE_ENV,
-  //       'process.env.API_URL': process.env.API_URL || 'localhost:3000'
-  //     }
-  //   })
-  // ],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'API_URL': process.env.API_URL || JSON.stringify('http://localhost:3000/api/')
+      }
+    })
+  ],
   module: {
     rules: [
       { test: /\.css$/, loader: 'style-loader!css-loader' },
