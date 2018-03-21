@@ -51,4 +51,6 @@ var partTwo = [
   "Conclusion"
 ];
 
-module.exports = { partOne, partTwo };
+var allChapters = partOne.concat(partTwo);
+
+module.exports = { partOne, partTwo, allChapters };

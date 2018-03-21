@@ -1,46 +1,4 @@
-<script type="text/javascript">
-  import topSites from './components/top-sites.vue';
-  import bookmarks from './components/bookmarks.vue';
-  import dateTime from './components/date-time.vue';
-  import axiosService from './services/axiosService';
-
-  export default {
-
-    name: 'home',
-
-    data: function() {
-      return {
-        days: []
-      };
-    },
-
-    computed: {
-      today: function() {
-        if (this.days.length) {
-          return this.days[0].excerpt;
-        }
-      }
-    },
-
-    components: { topSites, bookmarks, dateTime },
-
-    mounted: function() {
-      this.getToday();
-    },
-
-    methods: {
-      getToday() {
-        axiosService.get('/today').then(response => {
-          console.log('/today res ', response);
-          this.days = response.data.days;
-        }).catch(err => {
-          console.log('err ', err);
-        });
-      }
-    }
-
-  };
-</script>
+<script type="text/javascript" src="./home.js"></script>
 
 <style lang="scss">
   .today-wrapper {
@@ -53,6 +11,12 @@
     margin: 0 auto;
     text-align: center;
     white-space: pre-wrap;
+  }
+
+  .day-data{
+    li {
+      padding-bottom: 10px;
+    }
   }
 </style>
 
@@ -74,7 +38,18 @@
         <date-time></date-time>
 
         <div class="today-wrapper">
-          <div class="today-text custom-whiteframe">{{ today }}</div>
+          <div class="today-text custom-whiteframe">{{ todays }}</div>
+        </div>
+      </div>
+
+      <div class="md-layout-item md-size-20">
+        <div class="custom-whiteframe">
+          <ul v-for="day in dayData" class="day-data">
+            <li v-for="(value, key) in day" class="md-layout">
+              <span class="md-layout-item lable"><b>{{ key }}:&nbsp;</b></span>
+              <span class="md-layout-item data">{{ value }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
