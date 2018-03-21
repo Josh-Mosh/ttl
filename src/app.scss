@@ -3,8 +3,9 @@
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
 @include md-register-theme("default", (
-  primary: md-get-palette-color(blue, A200), // The primary color of your application
-  accent: md-get-palette-color(red, A200) // The accent or secondary color
+  primary: md-get-palette-color(bluegrey, 900), // The primary color of your application
+  accent: md-get-palette-color(bluegrey, 400), // The accent or secondary color
+  background: white
 ));
 
 @import "~vue-material/dist/theme/all"; // Apply the theme
@@ -46,12 +47,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   display: flex;
+  line-height: inherit;
 }
 
 .container {
   background: url(assets/images/bgmap.jpg) no-repeat center center fixed;
   background-size: cover;
-  display: flex;
   width: 100%;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -60,12 +61,6 @@ body {
 
 .outer-wrapper {
   display: flex;
-}
-
-.inner-wrapper {
-  padding-bottom: 56px;
-  height: 100%;
-  width: 100%;
 }
 
 h1, h2 {

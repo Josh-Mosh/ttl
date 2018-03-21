@@ -130,6 +130,7 @@
             <md-table-head width="45%">Excerpt</md-table-head>
           </md-table-row>
           <editable-row v-for="(day, index) in days"
+            :key="day._id"
             :day="day"
             :index="index"
             :chapters="chapters"

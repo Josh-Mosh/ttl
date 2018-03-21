@@ -8,6 +8,20 @@
 
     name: 'home',
 
+    data: function() {
+      return {
+        days: []
+      };
+    },
+
+    computed: {
+      today: function() {
+        if (this.days.length) {
+          return this.days[0].excerpt;
+        }
+      }
+    },
+
     components: { topSites, bookmarks, dateTime },
 
     mounted: function() {
@@ -18,7 +32,7 @@
       getToday() {
         axiosService.get('/today').then(response => {
           console.log('/today res ', response);
-          // this.days = response.data.days;
+          this.days = response.data.days;
         }).catch(err => {
           console.log('err ', err);
         });
@@ -36,36 +50,33 @@
   .today-text {
     color: #4a4942;
     font-family: 'Merienda';
-    font-size: 13px;
     margin: 0 auto;
     text-align: center;
-    width: 310px;
+    white-space: pre-wrap;
   }
 </style>
 
 <template>
-  <div id="home" class="outer-wrapper">
-    <div class="inner-wrapper">
+  <div id="home">
+    <div class="md-layout">
       <bookmarks></bookmarks>
-      <div>
-        <router-link to="/">Home</router-link>
-        <router-link to="/admin">Admin</router-link>
-      </div>
+    </div>
 
-      <div class="md-layout">
-        <top-sites></top-sites>
+    <div class="md-layout">
+      <router-link to="/">Home</router-link>
+      <router-link to="/admin">Admin</router-link>
+    </div>
 
-        <div class="md-layout-item md-size-60">
-          <date-time></date-time>
+    <div class="md-layout" style="height: 100%">
+      <top-sites></top-sites>
 
-          <div class="today-wrapper">
-            <div class="today-text custom-whiteframe">
-              "Bah!" he replied. "Nothing's out there, Professor Aronnax, and if there is some animal, what chance would we have of spotting it? Can't you see we're just wandering around at random? People say they've sighted this slippery beast again in the Pacific high seas-- I'm truly willing to believe it, but two months have already gone by since then, and judging by your narwhale's personality, it hates growing moldy from hanging out too long in the same waterways! It's blessed with a terrific gift for getting around. Now, professor, you know even better than I that nature doesn't violate good sense, and she wouldn't give some naturally slow animal the ability to move swiftly if it hadn't a need to use that talent. So if the beast does exist, it's already long gone!"
-            </div>
-          </div>
+      <div class="md-layout-item md-size-60">
+        <date-time></date-time>
+
+        <div class="today-wrapper">
+          <div class="today-text custom-whiteframe">{{ today }}</div>
         </div>
       </div>
-
     </div>
   </div>
 </template>

@@ -2,6 +2,7 @@
 
 <style lang="scss">
   .top-link {
+    cursor: pointer;
     display: block;
     overflow: hidden;
     position: relative;
