@@ -1,5 +1,3 @@
-// Import global material styles first so we can override as needed
-// @import url('../vendor/vue-material-master/dist/vue-material.css');
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
 @include md-register-theme("default", (
