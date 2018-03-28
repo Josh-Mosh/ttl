@@ -3,6 +3,7 @@
 <style lang="scss">
   .today-wrapper {
     display: flex;
+    padding-top: 15px;
   }
 
   .today-text {
@@ -37,8 +38,8 @@
       <div class="md-layout-item md-size-60">
         <date-time></date-time>
 
-        <div class="today-wrapper">
-          <div class="today-text custom-whiteframe">{{ todays }}</div>
+        <div v-for="excerpt in todayExcerpts" class="today-wrapper">
+          <div class="today-text custom-whiteframe">{{ excerpt }}</div>
         </div>
       </div>
 
@@ -49,6 +50,7 @@
               <span class="md-layout-item lable"><b>{{ key }}:&nbsp;</b></span>
               <span class="md-layout-item data">{{ value }}</span>
             </li>
+            <hr>
           </ul>
         </div>
       </div>

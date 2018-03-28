@@ -34,9 +34,9 @@ export default {
   computed: {
 
     // can be multiple days in different years
-    todays: function() {
+    todayExcerpts: function() {
       if (this.days.length) {
-        return this.days[0].excerpt;
+        return this.days.map(day => day.excerpt);
       }
     },
 
@@ -53,10 +53,6 @@ export default {
     },
 
     dayData: function() {
-      if (!this.todays) {
-        return;
-      }
-
       return this.days.map((day, index) => {
         return {
           Date: this.formattedTodayDates[index],
