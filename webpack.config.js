@@ -11,7 +11,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'API_URL': process.env.API_URL || JSON.stringify('http://localhost:3000/api/')
+        NODE_ENV: "'development'",
+        API_URL: "'http://localhost:3000/api/'"
       }
     })
   ],
@@ -68,7 +69,8 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
+        NODE_ENV: '"production"',
+        API_URL: '"https://ttl-api.herokuapp.com/api/"'
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
